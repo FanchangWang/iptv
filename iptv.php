@@ -2,6 +2,7 @@
 $tvg_list = [
     [
         "iptv-name" => ["CCTV1", "CCTV-1"],
+        "tvg-id" => "1",
         "tvg-name" => "CCTV1",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png",
@@ -9,6 +10,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-2"],
+        "tvg-id" => "2",
         "tvg-name" => "CCTV2",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV2.png",
@@ -16,6 +18,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-3"],
+        "tvg-id" => "3",
         "tvg-name" => "CCTV3",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV3.png",
@@ -23,6 +26,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-4"],
+        "tvg-id" => "4",
         "tvg-name" => "CCTV4",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV4.png",
@@ -30,6 +34,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-5"],
+        "tvg-id" => "5",
         "tvg-name" => "CCTV5",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV5.png",
@@ -37,6 +42,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-5+"],
+        "tvg-id" => "6",
         "tvg-name" => "CCTV5+",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV5+.png",
@@ -44,6 +50,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-6"],
+        "tvg-id" => "7",
         "tvg-name" => "CCTV6",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV6.png",
@@ -51,6 +58,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-7"],
+        "tvg-id" => "8",
         "tvg-name" => "CCTV7",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV7.png",
@@ -58,6 +66,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-8"],
+        "tvg-id" => "9",
         "tvg-name" => "CCTV8",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV8.png",
@@ -65,6 +74,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-9"],
+        "tvg-id" => "10",
         "tvg-name" => "CCTV9",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV9.png",
@@ -72,6 +82,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-10"],
+        "tvg-id" => "11",
         "tvg-name" => "CCTV10",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV10.png",
@@ -79,6 +90,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-11"],
+        "tvg-id" => "12",
         "tvg-name" => "CCTV11",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV11.png",
@@ -86,6 +98,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-12"],
+        "tvg-id" => "13",
         "tvg-name" => "CCTV12",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV12.png",
@@ -93,6 +106,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-13"],
+        "tvg-id" => "14",
         "tvg-name" => "CCTV13",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV13.png",
@@ -100,6 +114,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-14"],
+        "tvg-id" => "15",
         "tvg-name" => "CCTV14",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV14.png",
@@ -107,6 +122,7 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-15"],
+        "tvg-id" => "16",
         "tvg-name" => "CCTV15",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV15.png",
@@ -114,258 +130,301 @@ $tvg_list = [
     ],
     [
         "iptv-name" => ["CCTV-17"],
+        "tvg-id" => "17",
         "tvg-name" => "CCTV17",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV17.png",
         "name" => "CCTV-17农村农业"
     ],
     [
+        "tvg-id" => "20",
         "tvg-name" => "CGTN",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/cgtn.png",
         "name" => "CGTN"
     ],
     [
+        "tvg-id" => "106",
         "tvg-name" => "CCTV4K",
         "group-title" => "央视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/CCTV4k.png",
         "name" => "CCTV4K"
     ],
     [
+        "tvg-id" => "27",
         "tvg-name" => "湖南卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/hunan.png",
         "name" => "湖南卫视"
     ],
     [
+        "tvg-id" => "28",
         "tvg-name" => "浙江卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/zhejiang.png",
         "name" => "浙江卫视"
     ],
     [
+        "tvg-id" => "29",
         "tvg-name" => "江苏卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/jiangsu.png",
         "name" => "江苏卫视"
     ],
     [
+        "tvg-id" => "30",
         "tvg-name" => "北京卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/beijing.png",
         "name" => "北京卫视"
     ],
     [
+        "tvg-id" => "31",
         "tvg-name" => "东方卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/dongfang.png",
         "name" => "东方卫视"
     ],
     [
+        "tvg-id" => "32",
         "tvg-name" => "安徽卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/anhui.png",
         "name" => "安徽卫视"
     ],
     [
+        "tvg-id" => "33",
         "tvg-name" => "广东卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/guangdong.png",
         "name" => "广东卫视"
     ],
     [
+        "tvg-id" => "34",
         "tvg-name" => "深圳卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/shenzhen.png",
         "name" => "深圳卫视"
     ],
     [
+        "tvg-id" => "36",
         "tvg-name" => "辽宁卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/liaoning.png",
         "name" => "辽宁卫视"
     ],
     [
+        "tvg-id" => "37",
         "tvg-name" => "旅游卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/lvyou.png",
         "name" => "旅游卫视"
     ],
     [
+        "tvg-id" => "38",
         "tvg-name" => "山东卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/shandong.png",
         "name" => "山东卫视"
     ],
     [
+        "tvg-id" => "39",
         "tvg-name" => "天津卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/tianjin.png",
         "name" => "天津卫视"
     ],
     [
+        "tvg-id" => "40",
         "tvg-name" => "重庆卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/chongqing.png",
         "name" => "重庆卫视"
     ],
     [
+        "tvg-id" => "41",
         "tvg-name" => "东南卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/dongnan.png",
         "name" => "东南卫视"
     ],
     [
+        "tvg-id" => "42",
         "tvg-name" => "甘肃卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/gansu.png",
         "name" => "甘肃卫视"
     ],
     [
+        "tvg-id" => "43",
         "tvg-name" => "广西卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/guangxi.png",
         "name" => "广西卫视"
     ],
     [
+        "tvg-id" => "44",
         "tvg-name" => "贵州卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/guizhou.png",
         "name" => "贵州卫视"
     ],
     [
+        "tvg-id" => "45",
         "tvg-name" => "河北卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/hebei.png",
         "name" => "河北卫视"
     ],
     [
+        "tvg-id" => "46",
         "tvg-name" => "黑龙江卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/heilongjiang.png",
         "name" => "黑龙江卫视"
     ],
     [
+        "tvg-id" => "47",
         "tvg-name" => "河南卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/henan.png",
         "name" => "河南卫视"
     ],
     [
+        "tvg-id" => "48",
         "tvg-name" => "湖北卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/hubei.png",
         "name" => "湖北卫视"
     ],
     [
+        "tvg-id" => "50",
         "tvg-name" => "江西卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/jiangxi.png",
         "name" => "江西卫视"
     ],
     [
+        "tvg-id" => "51",
         "tvg-name" => "吉林卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/jilin.png",
         "name" => "吉林卫视"
     ],
     [
+        "tvg-id" => "52",
         "tvg-name" => "内蒙古卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/neimeng.png",
         "name" => "内蒙古卫视"
     ],
     [
+        "tvg-id" => "53",
         "tvg-name" => "宁夏卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/ningxia.png",
         "name" => "宁夏卫视"
     ],
     [
+        "tvg-id" => "54",
         "tvg-name" => "山西卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/shanxi_.png",
         "name" => "山西卫视"
     ],
     [
+        "tvg-id" => "55",
         "tvg-name" => "陕西卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/shanxi.png",
         "name" => "陕西卫视"
     ],
     [
+        "tvg-id" => "56",
         "tvg-name" => "四川卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/sichuan.png",
         "name" => "四川卫视"
     ],
     [
+        "tvg-id" => "57",
         "tvg-name" => "新疆卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/xinjiang.png",
         "name" => "新疆卫视"
     ],
     [
+        "tvg-id" => "58",
         "tvg-name" => "云南卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/yunnan.png",
         "name" => "云南卫视"
     ],
     [
+        "tvg-id" => "59",
         "tvg-name" => "青海卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/qinghai.png",
         "name" => "青海卫视"
     ],
     [
+        "tvg-id" => "60",
         "tvg-name" => "南方卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/nanfang.png",
         "name" => "南方卫视"
     ],
     [
+        "tvg-id" => "61",
         "tvg-name" => "兵团卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/bingtuan.png",
         "name" => "兵团卫视"
     ],
     [
+        "tvg-id" => "63",
         "tvg-name" => "延边卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/YANBIAN1.png",
         "name" => "延边卫视"
     ],
     [
+        "tvg-id" => "65",
         "tvg-name" => "黄河卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/huanghe.png",
         "name" => "黄河卫视"
     ],
     [
+        "tvg-id" => "68",
         "tvg-name" => "厦门卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/xiamen.png",
         "name" => "厦门卫视"
     ],
     [
+        "tvg-id" => "69",
         "tvg-name" => "金鹰卡通",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/qt/jinyingkatong.png",
         "name" => "金鹰卡通"
     ],
     [
+        "tvg-id" => "70",
         "tvg-name" => "康巴卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/kangba.png",
         "name" => "康巴卫视"
     ],
     [
+        "tvg-id" => "71",
         "tvg-name" => "西藏卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/xizang.png",
         "name" => "西藏卫视"
     ],
     [
+        "tvg-id" => "72",
         "tvg-name" => "三沙卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/sansha.png",
@@ -387,7 +446,7 @@ if (is_file($file)) {
 }
 
 $result_list = [];
-foreach ($tvg_list as $tvg_id => $tvg) {
+foreach ($tvg_list as $tvg) {
     if (!isset($tvg['iptv-name'])) {
         $tvg['iptv-name'] = [$tvg['tvg-name']];
     }
@@ -409,15 +468,14 @@ foreach ($tvg_list as $tvg_id => $tvg) {
                 } else {
                     $tvg_name = $tvg['name'];
                 }
-                $t_id = $tvg_id + 1;
                 $result_list[] = [
-                    'tvg-id' => $t_id,
+                    'tvg-id' => $tvg['tvg-id'],
                     'tvg-logo' => $tvg['tvg-logo'],
                     'name' => $tvg_name,
                     'tvg-name' => $tvg['tvg-name'],
                     'group-title' => $tvg['group-title'],
                 ];
-                $m3u = "#EXTINF:-1 tvg-id=\"{$t_id}\" tvg-name=\"{$tvg['tvg-name']}\" tvg-logo=\"{$tvg['tvg-logo']}\" group-title=\"{$tvg['group-title']}\", {$tvg_name}\n{$iptv_item['url']}\n";
+                $m3u = "#EXTINF:-1 tvg-id=\"{$tvg['tvg-id']}\" tvg-name=\"{$tvg['tvg-name']}\" tvg-logo=\"{$tvg['tvg-logo']}\" group-title=\"{$tvg['group-title']}\", {$tvg_name}\n{$iptv_item['url']}\n";
                 file_put_contents($file, $m3u, FILE_APPEND);
 
                 break; // 暂时维持一个频道只保留一个源
