@@ -201,12 +201,20 @@ $tvg_list = [
         "name" => "北京卫视"
     ],
     [
-        "vid" => 2000298002,
-        "tvg-id" => "32",
-        "tvg-name" => "安徽卫视",
+        "vid" => 2000281302,
+        "tvg-id" => "36",
+        "tvg-name" => "辽宁卫视",
         "group-title" => "卫视",
-        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/anhui.png",
-        "name" => "安徽卫视"
+        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/liaoning.png",
+        "name" => "辽宁卫视"
+    ],
+    [
+        "vid" => 2000293902,
+        "tvg-id" => "46",
+        "tvg-name" => "黑龙江卫视",
+        "group-title" => "卫视",
+        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/heilongjiang.png",
+        "name" => "黑龙江卫视"
     ],
     [
         "vid" => 2000292702,
@@ -215,6 +223,14 @@ $tvg_list = [
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/guangdong.png",
         "name" => "广东卫视"
+    ],
+    [
+        "vid" => 2000298002,
+        "tvg-id" => "32",
+        "tvg-name" => "安徽卫视",
+        "group-title" => "卫视",
+        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/anhui.png",
+        "name" => "安徽卫视"
     ],
     [
         "vid" => 2000292202,
@@ -231,22 +247,6 @@ $tvg_list = [
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/tianjin.png",
         "name" => "天津卫视"
-    ],
-    [
-        "vid" => 2000281302,
-        "tvg-id" => "36",
-        "tvg-name" => "辽宁卫视",
-        "group-title" => "卫视",
-        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/liaoning.png",
-        "name" => "辽宁卫视"
-    ],
-    [
-        "vid" => 2000293902,
-        "tvg-id" => "46",
-        "tvg-name" => "黑龙江卫视",
-        "group-title" => "卫视",
-        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/heilongjiang.png",
-        "name" => "黑龙江卫视"
     ],
     [
         "vid" => 2000297802,
@@ -312,14 +312,14 @@ $tvg_list = [
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/jilin.png",
         "name" => "吉林卫视"
     ],
-    [
-        "vid" => 2000297702,
-        "tvg-id" => "54",
-        "tvg-name" => "山西卫视",
-        "group-title" => "卫视",
-        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/shanxi_.png",
-        "name" => "山西卫视"
-    ],
+//    [
+//        "vid" => 2000297702,
+//        "tvg-id" => "54",
+//        "tvg-name" => "山西卫视",
+//        "group-title" => "卫视",
+//        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/shanxi_.png",
+//        "name" => "山西卫视"
+//    ],
     [
         "vid" => 2000294402,
         "tvg-id" => "55",
@@ -384,30 +384,30 @@ $tvg_list = [
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/qinghai.png",
         "name" => "青海卫视"
     ],
-    [
-        "vid" => 2000694302,
-        "tvg-id" => "52",
-        "tvg-name" => "内蒙古卫视",
-        "group-title" => "卫视",
-        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/neimeng.png",
-        "name" => "内蒙古卫视"
-    ],
-    [
-        "vid" => 2000295202,
-        "tvg-id" => "71",
-        "tvg-name" => "西藏卫视",
-        "group-title" => "卫视",
-        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/xizang.png",
-        "name" => "西藏卫视"
-    ],
-    [
-        "vid" => 2000295302,
-        "tvg-id" => "57",
-        "tvg-name" => "新疆卫视",
-        "group-title" => "卫视",
-        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/xinjiang.png",
-        "name" => "新疆卫视"
-    ],
+//    [
+//        "vid" => 2000694302,
+//        "tvg-id" => "52",
+//        "tvg-name" => "内蒙古卫视",
+//        "group-title" => "卫视",
+//        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/neimeng.png",
+//        "name" => "内蒙古卫视"
+//    ],
+//    [
+//        "vid" => 2000295202,
+//        "tvg-id" => "71",
+//        "tvg-name" => "西藏卫视",
+//        "group-title" => "卫视",
+//        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/xizang.png",
+//        "name" => "西藏卫视"
+//    ],
+//    [
+//        "vid" => 2000295302,
+//        "tvg-id" => "57",
+//        "tvg-name" => "新疆卫视",
+//        "group-title" => "卫视",
+//        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/xinjiang.png",
+//        "name" => "新疆卫视"
+//    ],
 //    [
 //        "tvg-id" => "60",
 //        "tvg-name" => "南方卫视",
