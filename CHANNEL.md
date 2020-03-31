@@ -52,5 +52,4 @@
 | 60 | <img src='http://epg.51zmt.top:8000/tb1/ws/nanfang.png' alt='南方卫视' height='30'> | 南方卫视 | 南方卫视 | 卫视 |
 | 61 | <img src='http://epg.51zmt.top:8000/tb1/ws/bingtuan.png' alt='兵团卫视' height='30'> | 兵团卫视 | 兵团卫视 | 卫视 |
 | 63 | <img src='http://epg.51zmt.top:8000/tb1/ws/YANBIAN1.png' alt='延边卫视' height='30'> | 延边卫视 | 延边卫视 | 卫视 |
-| 69 | <img src='http://epg.51zmt.top:8000/tb1/qt/jinyingkatong.png' alt='金鹰卡通' height='30'> | 金鹰卡通 | 金鹰卡通 | 卫视 |
 | 71 | <img src='http://epg.51zmt.top:8000/tb1/ws/xizang.png' alt='西藏卫视' height='30'> | 西藏卫视 | 西藏卫视 | 卫视 |

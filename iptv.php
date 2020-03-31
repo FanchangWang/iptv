@@ -402,13 +402,13 @@ $tvg_list = [
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/xiamen.png",
         "name" => "厦门卫视"
     ],
-    [
-        "tvg-id" => "69",
-        "tvg-name" => "金鹰卡通",
-        "group-title" => "卫视",
-        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/qt/jinyingkatong.png",
-        "name" => "金鹰卡通"
-    ],
+//    [
+//        "tvg-id" => "69",
+//        "tvg-name" => "金鹰卡通",
+//        "group-title" => "卫视",
+//        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/qt/jinyingkatong.png",
+//        "name" => "金鹰卡通"
+//    ],
     [
         "tvg-id" => "70",
         "tvg-name" => "康巴卫视",
