@@ -348,6 +348,12 @@ $tvg_list = [
         "name" => "厦门卫视"
     ],
     [
+        "tvg-name" => "金鹰卡通",
+        "group-title" => "卫视",
+        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/qt/jinyingkatong.png",
+        "name" => "金鹰卡通"
+    ],
+    [
         "tvg-name" => "康巴卫视",
         "group-title" => "卫视",
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/kangba.png",
@@ -381,7 +387,7 @@ if (is_file($file)) {
 }
 
 $result_list = [];
-foreach ($tvg_list as $tvg) {
+foreach ($tvg_list as $tvg_id => $tvg) {
     if (!isset($tvg['iptv-name'])) {
         $tvg['iptv-name'] = [$tvg['tvg-name']];
     }
@@ -403,24 +409,28 @@ foreach ($tvg_list as $tvg) {
                 } else {
                     $tvg_name = $tvg['name'];
                 }
+                $t_id = $tvg_id + 1;
                 $result_list[] = [
+                    'tvg-id' => $t_id,
                     'tvg-logo' => $tvg['tvg-logo'],
                     'name' => $tvg_name,
                     'tvg-name' => $tvg['tvg-name'],
                     'group-title' => $tvg['group-title'],
                 ];
-                $m3u = "#EXTINF:-1 tvg-name=\"{$tvg['tvg-name']}\" tvg-logo=\"{$tvg['tvg-logo']}\" group-title=\"{$tvg['group-title']}\", {$tvg_name}\n{$iptv_item['url']}\n";
+                $m3u = "#EXTINF:-1 tvg-id=\"{$t_id}\" tvg-name=\"{$tvg['tvg-name']}\" tvg-logo=\"{$tvg['tvg-logo']}\" group-title=\"{$tvg['group-title']}\", {$tvg_name}\n{$iptv_item['url']}\n";
                 file_put_contents($file, $m3u, FILE_APPEND);
+
+                break; // 暂时维持一个频道只保留一个源
             }
         }
     }
 }
 if (!empty($result_list)) {
-    $channel = "| 序号 | tvg-logo | 频道 | tvg-name | group-title |\n";
+    $channel = "| tvg-id | tvg-logo | 频道 | tvg-name | group-title |\n";
     $channel .= "| :---- | :---- | :---- | :---- | :---- |\n";
     foreach ($result_list as $key => $item) {
         $idx = $key + 1;
-        $channel .= "| {$idx} | <img src='{$item['tvg-logo']}' alt='{$item['tvg-name']}' height='30'> | {$item['name']} | {$item['tvg-name']} | {$item['group-title']} |\n";
+        $channel .= "| {$item['tvg-id']} | <img src='{$item['tvg-logo']}' alt='{$item['tvg-name']}' height='30'> | {$item['name']} | {$item['tvg-name']} | {$item['group-title']} |\n";
     }
     file_put_contents('./CHANNEL.md', $channel);
 }

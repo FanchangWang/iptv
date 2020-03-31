@@ -1,24 +1,23 @@
-| 序号 | tvg-logo | 频道 | tvg-name | group-title |
+| tvg-id | tvg-logo | 频道 | tvg-name | group-title |
 | :---- | :---- | :---- | :---- | :---- |
 | 1 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png' alt='CCTV1' height='30'> | CCTV-1综合 | CCTV1 | 央视 |
-| 2 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png' alt='CCTV1' height='30'> | CCTV-1综合(备2) | CCTV1 | 央视 |
-| 3 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV2.png' alt='CCTV2' height='30'> | CCTV-2财经 | CCTV2 | 央视 |
-| 4 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV3.png' alt='CCTV3' height='30'> | CCTV-3综艺 | CCTV3 | 央视 |
-| 5 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV4.png' alt='CCTV4' height='30'> | CCTV-4中文国际 | CCTV4 | 央视 |
-| 6 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV5.png' alt='CCTV5' height='30'> | CCTV-5体育 | CCTV5 | 央视 |
-| 7 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV5+.png' alt='CCTV5+' height='30'> | CCTV-5+体育赛事 | CCTV5+ | 央视 |
-| 8 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV6.png' alt='CCTV6' height='30'> | CCTV-6电影 | CCTV6 | 央视 |
-| 9 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV7.png' alt='CCTV7' height='30'> | CCTV-7军事农业 | CCTV7 | 央视 |
-| 10 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV8.png' alt='CCTV8' height='30'> | CCTV-8电视剧 | CCTV8 | 央视 |
-| 11 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV9.png' alt='CCTV9' height='30'> | CCTV-9记录 | CCTV9 | 央视 |
-| 12 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV10.png' alt='CCTV10' height='30'> | CCTV-10科教 | CCTV10 | 央视 |
-| 13 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV11.png' alt='CCTV11' height='30'> | CCTV-11戏曲 | CCTV11 | 央视 |
-| 14 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV12.png' alt='CCTV12' height='30'> | CCTV-12社会与法 | CCTV12 | 央视 |
-| 15 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV13.png' alt='CCTV13' height='30'> | CCTV-13新闻 | CCTV13 | 央视 |
-| 16 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV14.png' alt='CCTV14' height='30'> | CCTV-14少儿 | CCTV14 | 央视 |
-| 17 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV15.png' alt='CCTV15' height='30'> | CCTV-15音乐 | CCTV15 | 央视 |
-| 18 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV17.png' alt='CCTV17' height='30'> | CCTV-17农村农业 | CCTV17 | 央视 |
-| 19 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/cgtn.png' alt='CGTN' height='30'> | CGTN | CGTN | 央视 |
+| 2 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV2.png' alt='CCTV2' height='30'> | CCTV-2财经 | CCTV2 | 央视 |
+| 3 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV3.png' alt='CCTV3' height='30'> | CCTV-3综艺 | CCTV3 | 央视 |
+| 4 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV4.png' alt='CCTV4' height='30'> | CCTV-4中文国际 | CCTV4 | 央视 |
+| 5 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV5.png' alt='CCTV5' height='30'> | CCTV-5体育 | CCTV5 | 央视 |
+| 6 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV5+.png' alt='CCTV5+' height='30'> | CCTV-5+体育赛事 | CCTV5+ | 央视 |
+| 7 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV6.png' alt='CCTV6' height='30'> | CCTV-6电影 | CCTV6 | 央视 |
+| 8 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV7.png' alt='CCTV7' height='30'> | CCTV-7军事农业 | CCTV7 | 央视 |
+| 9 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV8.png' alt='CCTV8' height='30'> | CCTV-8电视剧 | CCTV8 | 央视 |
+| 10 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV9.png' alt='CCTV9' height='30'> | CCTV-9记录 | CCTV9 | 央视 |
+| 11 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV10.png' alt='CCTV10' height='30'> | CCTV-10科教 | CCTV10 | 央视 |
+| 12 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV11.png' alt='CCTV11' height='30'> | CCTV-11戏曲 | CCTV11 | 央视 |
+| 13 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV12.png' alt='CCTV12' height='30'> | CCTV-12社会与法 | CCTV12 | 央视 |
+| 14 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV13.png' alt='CCTV13' height='30'> | CCTV-13新闻 | CCTV13 | 央视 |
+| 15 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV14.png' alt='CCTV14' height='30'> | CCTV-14少儿 | CCTV14 | 央视 |
+| 16 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV15.png' alt='CCTV15' height='30'> | CCTV-15音乐 | CCTV15 | 央视 |
+| 17 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/CCTV17.png' alt='CCTV17' height='30'> | CCTV-17农村农业 | CCTV17 | 央视 |
+| 18 | <img src='http://epg.51zmt.top:8000/tb1/CCTV/cgtn.png' alt='CGTN' height='30'> | CGTN | CGTN | 央视 |
 | 20 | <img src='http://epg.51zmt.top:8000/tb1/ws/hunan.png' alt='湖南卫视' height='30'> | 湖南卫视 | 湖南卫视 | 卫视 |
 | 21 | <img src='http://epg.51zmt.top:8000/tb1/ws/zhejiang.png' alt='浙江卫视' height='30'> | 浙江卫视 | 浙江卫视 | 卫视 |
 | 22 | <img src='http://epg.51zmt.top:8000/tb1/ws/jiangsu.png' alt='江苏卫视' height='30'> | 江苏卫视 | 江苏卫视 | 卫视 |
@@ -53,4 +52,5 @@
 | 51 | <img src='http://epg.51zmt.top:8000/tb1/ws/nanfang.png' alt='南方卫视' height='30'> | 南方卫视 | 南方卫视 | 卫视 |
 | 52 | <img src='http://epg.51zmt.top:8000/tb1/ws/bingtuan.png' alt='兵团卫视' height='30'> | 兵团卫视 | 兵团卫视 | 卫视 |
 | 53 | <img src='http://epg.51zmt.top:8000/tb1/ws/YANBIAN1.png' alt='延边卫视' height='30'> | 延边卫视 | 延边卫视 | 卫视 |
-| 54 | <img src='http://epg.51zmt.top:8000/tb1/ws/xizang.png' alt='西藏卫视' height='30'> | 西藏卫视 | 西藏卫视 | 卫视 |
+| 56 | <img src='http://epg.51zmt.top:8000/tb1/qt/jinyingkatong.png' alt='金鹰卡通' height='30'> | 金鹰卡通 | 金鹰卡通 | 卫视 |
+| 58 | <img src='http://epg.51zmt.top:8000/tb1/ws/xizang.png' alt='西藏卫视' height='30'> | 西藏卫视 | 西藏卫视 | 卫视 |

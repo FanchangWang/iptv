@@ -1,6 +1,8 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="央视", CCTV-1综合
 https://live-wcloud-cdn.ysp.cctv.cn/tlivecloud-cdn.ysp.cctv.cn/001/2000210102.m3u8
+#EXTINF:-1 tvg-id="2" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="央视", CCTV-1综合(备2)
+http://39.135.135.82:80/wh7f454c46tw2586129421_-1455745702/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225587/index.m3u8?icpid=88888888&RTS=1583531258&from=1&hms_devid=1011
 #EXTINF:-1 tvg-id="2" tvg-name="CCTV2" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV2.png" group-title="央视", CCTV-2财经
 https://live-wcloud-cdn.ysp.cctv.cn/tlivecloud-cdn.ysp.cctv.cn/001/2000203602.m3u8
 #EXTINF:-1 tvg-id="3" tvg-name="CCTV3" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV3.png" group-title="央视", CCTV-3综艺
@@ -103,7 +105,5 @@ http://nclive.grtn.cn/tvs2/sd/live.m3u8?_ts
 http://httpdvb.slave.ttcatv.tv:13164/playurl?playtype=live&protocol=hls&accesstoken=R5E62C4E5U309EF010K778965A4ID620FE72PBM3233C4EV1044EZ33519WE66F22B3151&playtoken=ABCDEFGHI&programid=4200000189.m3u8
 #EXTINF:-1 tvg-id="53" tvg-name="延边卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/YANBIAN1.png" group-title="卫视", 延边卫视
 http://live.ybtvyun.com/video/s10006-cys-sd/index.m3u8
-#EXTINF:-1 tvg-id="56" tvg-name="金鹰卡通" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/jinyingkatong.png" group-title="卫视", 金鹰卡通
-http://phonews.qing.mgtv.com/nn_live/nn_x64/cz03NDlmZjEyMDA5OWM1MWZjNWFmZjMwY2ZhMmEyY2I0MSZlcz0xNTgzNTU5OTE0JnV1aWQ9YmZhYTY2ODExYzNjMmIyMDBhNzI4ODAxOWY4ZDk3MTctMWE5OTdjZCZ2PTImYXM9MCZjZG5leF9pZD13c19waG9uZTM,/JYKTMPP360.m3u8
-#EXTINF:-1 tvg-id="58" tvg-name="西藏卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png" group-title="卫视", 西藏卫视
+#EXTINF:-1 tvg-id="57" tvg-name="西藏卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png" group-title="卫视", 西藏卫视
 http://httpdvb.slave.ttcatv.tv:13164/playurl?playtype=live&protocol=hls&accesstoken=R5E62C4E5U309EF010K778965A4ID620FE72PBM3233C4EV1044EZ33519WE66F22B3151&playtoken=ABCDEFGHI&programid=4200000063.m3u8
