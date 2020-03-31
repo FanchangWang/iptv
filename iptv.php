@@ -409,7 +409,7 @@ foreach ($tvg_list as $tvg) {
                     'tvg-name' => $tvg['tvg-name'],
                     'group-title' => $tvg['group-title'],
                 ];
-                $m3u = "#EXTINF:-1 tvg-id=\"{$n}\" tvg-name=\"{$tvg['tvg-name']}\" tvg-logo=\"{$tvg['tvg-logo']}\" group-title=\"{$tvg['group-title']}\", {$tvg_name}\n{$iptv_item['url']}\n";
+                $m3u = "#EXTINF:-1 tvg-name=\"{$tvg['tvg-name']}\" tvg-logo=\"{$tvg['tvg-logo']}\" group-title=\"{$tvg['group-title']}\", {$tvg_name}\n{$iptv_item['url']}\n";
                 file_put_contents($file, $m3u, FILE_APPEND);
             }
         }
