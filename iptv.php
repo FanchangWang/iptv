@@ -388,6 +388,9 @@ foreach ($tvg_list as $tvg) {
     $i = 0;
     foreach ($iptv_list as $key => $iptv_channel) {
         foreach ($iptv_channel as $iptv_item) {
+            if ($iptv_item['url'] == 'http://httpdvb.slave.ttcatv.tv:13164/playurl?playtype=live&protocol=hls&accesstoken=R5E62C4E5U309EF010K778965A4ID620FE72PBM3233C4EV1044EZ33519WE66F22B3151&playtoken=ABCDEFGHI&programid=4200000133.m3u8') {
+                continue;
+            }
             $iptv_item['title'] = trim($iptv_item['title'], "\xEF\xBB\xBF");
             if (in_array($iptv_item['title'], $tvg['iptv-name'])) {
                 $n++;
