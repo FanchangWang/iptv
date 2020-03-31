@@ -380,7 +380,7 @@ if (is_file($file)) {
     @unlink($file);
 }
 
-$name_list = [];
+$result_list = [];
 foreach ($tvg_list as $tvg) {
     if (!isset($tvg['iptv-name'])) {
         $tvg['iptv-name'] = [$tvg['tvg-name']];
@@ -400,14 +400,26 @@ foreach ($tvg_list as $tvg) {
                 } else {
                     $tvg_name = $tvg['name'];
                 }
-                $name_list[] = $tvg_name;
+                $result_list[] = [
+                    'tvg-logo' => $tvg['tvg-logo'],
+                    'name' => $tvg_name,
+                    'tvg-name' => $tvg['tvg-name'],
+                    'group-title' => $tvg['group-title'],
+                ];
                 $m3u = "#EXTINF:-1 tvg-id=\"{$n}\" tvg-name=\"{$tvg['tvg-name']}\" tvg-logo=\"{$tvg['tvg-logo']}\" group-title=\"{$tvg['group-title']}\", {$tvg_name}\n{$iptv_item['url']}\n";
                 file_put_contents($file, $m3u, FILE_APPEND);
             }
         }
     }
 }
-
-print_r($name_list);
+if (!empty($result_list)) {
+    $channel = "| 序号 | tvg-logo | 频道 | tvg-name | group-title |\n";
+    $channel .= "| :---- | :---- | :---- | :---- | :---- |\n";
+    foreach ($result_list as $key => $item) {
+        $idx = $key + 1;
+        $channel .= "| {$idx} | <img src='{$item['tvg-logo']}' alt='{$item['tvg-name']}' height='30'> | {$item['name']} | {$item['tvg-name']} | {$item['group-title']} |\n";
+    }
+    file_put_contents('./CHANNEL.md', $channel);
+}
 
 var_dump('iptv over! num:' . $n);
