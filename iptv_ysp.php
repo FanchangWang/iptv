@@ -344,14 +344,14 @@ $tvg_list = [
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/sichuan.png",
         "name" => "四川卫视"
     ],
-    [
-        "vid" => 2000295403,
-        "tvg-id" => "58",
-        "tvg-name" => "云南卫视",
-        "group-title" => "卫视",
-        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/yunnan.png",
-        "name" => "云南卫视"
-    ],
+//    [
+//        "vid" => 2000295403,
+//        "tvg-id" => "58",
+//        "tvg-name" => "云南卫视",
+//        "group-title" => "卫视",
+//        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/yunnan.png",
+//        "name" => "云南卫视"
+//    ],
     [
         "vid" => 2000293303,
         "tvg-id" => "44",
@@ -368,14 +368,14 @@ $tvg_list = [
         "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/lvyou.png",
         "name" => "海南卫视"
     ],
-    [
-        "vid" => 2000285103,
-        "tvg-id" => "53",
-        "tvg-name" => "宁夏卫视",
-        "group-title" => "卫视",
-        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/ningxia.png",
-        "name" => "宁夏卫视"
-    ],
+//    [
+//        "vid" => 2000285103,
+//        "tvg-id" => "53",
+//        "tvg-name" => "宁夏卫视",
+//        "group-title" => "卫视",
+//        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/ningxia.png",
+//        "name" => "宁夏卫视"
+//    ],
     [
         "vid" => 2000294703,
         "tvg-id" => "59",
