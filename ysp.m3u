@@ -1,4 +1,5 @@
-#EXTM3U x-tvg-url="http://epg.51zmt.top:8000/cc.xml.gz" url-tvg="http://epg.51zmt.top:8000/cc.xml.gz" tvg-url="http://epg.51zmt.top:8000/cc.xml.gz"\n#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="央视", CCTV-1综合
+#EXTM3U x-tvg-url="http://epg.51zmt.top:8000/cc.xml.gz" url-tvg="http://epg.51zmt.top:8000/cc.xml.gz" tvg-url="http://epg.51zmt.top:8000/cc.xml.gz
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="央视", CCTV-1综合
 http://61.151.179.194/tlivecloud-cdn.ysp.cctv.cn/001/2000210103.m3u8
 #EXTINF:-1 tvg-id="2" tvg-name="CCTV2" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV2.png" group-title="央视", CCTV-2财经
 http://61.151.179.194/tlivecloud-cdn.ysp.cctv.cn/001/2000203603.m3u8

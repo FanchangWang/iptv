@@ -542,7 +542,7 @@ function backUpIp($ip)
  */
 function fetchM3u($ip)
 {
-    $m3u = '#EXTM3U x-tvg-url="http://epg.51zmt.top:8000/cc.xml.gz" url-tvg="http://epg.51zmt.top:8000/cc.xml.gz" tvg-url="http://epg.51zmt.top:8000/cc.xml.gz"\n';
+    $m3u = "#EXTM3U x-tvg-url=\"http://epg.51zmt.top:8000/cc.xml.gz\" url-tvg=\"http://epg.51zmt.top:8000/cc.xml.gz\" tvg-url=\"http://epg.51zmt.top:8000/cc.xml.gz\n";
 
     $channel = "| tvg-id | tvg-logo | name | tvg-name | group-title |\n";
     $channel .= "| :---- | :---- | :---- | :---- | :---- |\n";
