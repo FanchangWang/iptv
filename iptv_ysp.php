@@ -563,20 +563,38 @@ function fetchM3u($ip)
 
 
 /**
- * 推送变更到 git
+ * 推送变更到 github & gitee
  */
 function pushGit()
 {
     exec("git add .");
     exec("git commit -m 'ip change'");
     exec("git push");
+    exec("git push gitee master");
+}
+
+/**
+ * 输出日志
+ *
+ * @param string $msg  日志内容
+ * @param string $type 日志级别
+ */
+function log($msg, $type = 'info')
+{
+    $log = [
+        'time' => date('Y-m-d H:i:s'),
+        'level' => $type,
+        'pid' => getmypid(),
+        'msg' => $msg
+    ];
+    echo json_encode($log, JSON_UNESCAPED_UNICODE) . "\n";
 }
 
 mkdirBak();
 
 if (!$ip = checkIpChange()) {
-    var_dump('iptv ip is not change! ');
-    return false;
+    log('iptv ip is not change! ');
+    die;
 }
 
 $num = fetchM3u($ip);
@@ -586,4 +604,4 @@ if ($num) {
     pushGit();
 }
 
-var_dump('iptv ysp over! num:' . $num);
+log('iptv ysp over! num:' . $num);
