@@ -1,13 +1,14 @@
 # iptv
 iptv 国内视频源，点击查看 [频道列表](./CHANNEL_YSP.md)
 
-## 视频源地址·推荐 (国内 gitee)
+## 视频源地址·推荐 (已内置 EPG)(国内 gitee)
 <https://gitee.com/guyuexuan/iptv/raw/master/ysp.m3u>
 
-## 视频源地址 (国外 github)
+## 视频源地址 (已内置 EPG)(国外 github)
 <https://raw.githubusercontent.com/FanchangWang/iptv/master/ysp.m3u>
 
 ## EPG 地址
+    > M3U 视频源已内置 EPG，此地址仅提供给不支持内置 EPG 源的 IPTV 客户端使用
 <http://epg.51zmt.top:8000/cc.xml.gz>
 
 ## 视频源 IP 来源项目
