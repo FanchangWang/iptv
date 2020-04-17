@@ -579,7 +579,7 @@ function pushGit()
  * @param string $msg  日志内容
  * @param string $type 日志级别
  */
-function log($msg, $type = 'info')
+function logger($msg, $type = 'info')
 {
     $log = [
         'time' => date('Y-m-d H:i:s'),
@@ -593,7 +593,7 @@ function log($msg, $type = 'info')
 mkdirBak();
 
 if (!$ip = checkIpChange()) {
-    log('iptv ip is not change! ');
+    logger('iptv ip is not change! ');
     die;
 }
 
@@ -604,4 +604,4 @@ if ($num) {
     pushGit();
 }
 
-log('iptv ysp over! num:' . $num);
+logger('iptv ysp over! num:' . $num);
