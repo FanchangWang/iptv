@@ -8,7 +8,7 @@ iptv 国内视频源，点击查看 [频道列表](./CHANNEL_YSP.md)
 <https://raw.githubusercontent.com/FanchangWang/iptv/master/ysp.m3u>
 
 ## EPG 地址
-<http://epg.51zmt.top:8000/cc.xml>
+<http://epg.51zmt.top:8000/cc.xml.gz>
 
 ## 视频源 IP 来源项目
 - [奇哈电视直播网](http://ysp.dszbdq.cn)
