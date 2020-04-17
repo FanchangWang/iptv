@@ -42,8 +42,6 @@
 | 55 | <img src='http://epg.51zmt.top:8000/tb1/ws/shanxi.png' alt='陕西卫视' height='30'> | 陕西卫视 | 陕西卫视 | 卫视 |
 | 42 | <img src='http://epg.51zmt.top:8000/tb1/ws/gansu.png' alt='甘肃卫视' height='30'> | 甘肃卫视 | 甘肃卫视 | 卫视 |
 | 56 | <img src='http://epg.51zmt.top:8000/tb1/ws/sichuan.png' alt='四川卫视' height='30'> | 四川卫视 | 四川卫视 | 卫视 |
-| 58 | <img src='http://epg.51zmt.top:8000/tb1/ws/yunnan.png' alt='云南卫视' height='30'> | 云南卫视 | 云南卫视 | 卫视 |
 | 44 | <img src='http://epg.51zmt.top:8000/tb1/ws/guizhou.png' alt='贵州卫视' height='30'> | 贵州卫视 | 贵州卫视 | 卫视 |
 | 37 | <img src='http://epg.51zmt.top:8000/tb1/ws/lvyou.png' alt='旅游卫视' height='30'> | 海南卫视 | 旅游卫视 | 卫视 |
-| 53 | <img src='http://epg.51zmt.top:8000/tb1/ws/ningxia.png' alt='宁夏卫视' height='30'> | 宁夏卫视 | 宁夏卫视 | 卫视 |
 | 59 | <img src='http://epg.51zmt.top:8000/tb1/ws/qinghai.png' alt='青海卫视' height='30'> | 青海卫视 | 青海卫视 | 卫视 |
