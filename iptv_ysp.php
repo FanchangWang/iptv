@@ -608,7 +608,7 @@ $num = fetchM3u($ip);
 
 if ($num) {
     backUpIp($ip);
-//    pushGit();
+    pushGit();
 }
 
 logger('iptv ysp over! num:' . $num);
