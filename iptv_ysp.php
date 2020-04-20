@@ -495,9 +495,9 @@ function mkdirBak()
  */
 function checkIpChange()
 {
-    $html = @file_get_contents('http://ysp.dszbdq.cn/zhibo/cctv1.html');
+    $html = @file_get_contents('http://tv.sason.xyz/new.m3u');
     if (!$html) {
-        $html = @file_get_contents('http://tv.sason.xyz/new.m3u');
+        $html = @file_get_contents('http://ysp.dszbdq.cn/zhibo/cctv1.html');
     }
 
     if (preg_match('/https?:\/\/(.*)\/.*.cctv.cn\/.*m3u8/', $html, $matches)) {
