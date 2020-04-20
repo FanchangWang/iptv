@@ -216,7 +216,8 @@ function getTvgList()
             "tvg-name" => "辽宁卫视",
             "group-title" => "卫视",
             "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/liaoning.png",
-            "name" => "辽宁卫视"
+            "name" => "辽宁卫视",
+            "url" => "http://httpdvb.slave.homed.hrtn.net/playurl?playtype=live&protocol=hls&accesstoken=R5D22D2B7U309E0093K7735BBEDIAC2DC601PBM3187915V10453Z6B7EDWE3620470C71&&playtoken=&programid=4200000159.m3u8"
         ],
         [
             "vid" => 2000293903,
@@ -494,7 +495,10 @@ function mkdirBak()
  */
 function checkIpChange()
 {
-    $html = file_get_contents('http://ysp.dszbdq.cn/zhibo/cctv1.html');
+    $html = @file_get_contents('http://ysp.dszbdq.cn/zhibo/cctv1.html');
+    if (!$html) {
+        $html = @file_get_contents('http://tv.sason.xyz/new.m3u');
+    }
 
     if (preg_match('/https?:\/\/(.*)\/.*.cctv.cn\/.*m3u8/', $html, $matches)) {
         if (!isset($matches[1]) || !$matches[1]) {
@@ -550,7 +554,10 @@ function fetchM3u($ip)
     $tvg_list = getTvgList();
 
     foreach ($tvg_list as $tvg) {
-        $m3u .= "#EXTINF:-1 tvg-id=\"{$tvg['tvg-id']}\" tvg-name=\"{$tvg['tvg-name']}\" tvg-logo=\"{$tvg['tvg-logo']}\" group-title=\"{$tvg['group-title']}\", {$tvg['name']}\nhttp://{$ip}/tlivecloud-cdn.ysp.cctv.cn/001/{$tvg['vid']}.m3u8\n";
+
+        $m3u .= "#EXTINF:-1 tvg-id=\"{$tvg['tvg-id']}\" tvg-name=\"{$tvg['tvg-name']}\" tvg-logo=\"{$tvg['tvg-logo']}\" group-title=\"{$tvg['group-title']}\", {$tvg['name']}\n";
+
+        $m3u .= isset($tvg['url']) && $tvg['url'] ? $tvg['url'] . "\n" : "http://{$ip}/tlivecloud-cdn.ysp.cctv.cn/001/{$tvg['vid']}.m3u8\n";
 
         $channel .= "| {$tvg['tvg-id']} | <img src='{$tvg['tvg-logo']}' alt='{$tvg['tvg-name']}' height='30'> | {$tvg['name']} | {$tvg['tvg-name']} | {$tvg['group-title']} |\n";
     }
@@ -601,7 +608,7 @@ $num = fetchM3u($ip);
 
 if ($num) {
     backUpIp($ip);
-    pushGit();
+//    pushGit();
 }
 
 logger('iptv ysp over! num:' . $num);
