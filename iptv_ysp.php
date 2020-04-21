@@ -217,7 +217,7 @@ function getTvgList()
             "group-title" => "卫视",
             "tvg-logo" => "http://epg.51zmt.top:8000/tb1/ws/liaoning.png",
             "name" => "辽宁卫视",
-            "url" => "http://httpdvb.slave.homed.hrtn.net/playurl?playtype=live&protocol=hls&accesstoken=R5D22D2B7U309E0093K7735BBEDIAC2DC601PBM3187915V10453Z6B7EDWE3620470C71&&playtoken=&programid=4200000159.m3u8"
+//            "url" => "http://httpdvb.slave.homed.hrtn.net/playurl?playtype=live&protocol=hls&accesstoken=R5D22D2B7U309E0093K7735BBEDIAC2DC601PBM3187915V10453Z6B7EDWE3620470C71&&playtoken=&programid=4200000159.m3u8"
         ],
         [
             "vid" => 2000293903,
@@ -557,7 +557,8 @@ function fetchM3u($ip)
 
         $m3u .= "#EXTINF:-1 tvg-id=\"{$tvg['tvg-id']}\" tvg-name=\"{$tvg['tvg-name']}\" tvg-logo=\"{$tvg['tvg-logo']}\" group-title=\"{$tvg['group-title']}\", {$tvg['name']}\n";
 
-        $m3u .= isset($tvg['url']) && $tvg['url'] ? $tvg['url'] . "\n" : "http://{$ip}/tlivecloud-cdn.ysp.cctv.cn/001/{$tvg['vid']}.m3u8\n";
+//        $m3u .= isset($tvg['url']) && $tvg['url'] ? $tvg['url'] . "\n" : "http://{$ip}/tlivecloud-cdn.ysp.cctv.cn/001/{$tvg['vid']}.m3u8\n";
+        $m3u .= isset($tvg['url']) && $tvg['url'] ? $tvg['url'] . "\n" : "http://{$ip}/live-cnc-cdn.ysp.cctv.cn/ysp/{$tvg['vid']}.m3u8\n";
 
         $channel .= "| {$tvg['tvg-id']} | <img src='{$tvg['tvg-logo']}' alt='{$tvg['tvg-name']}' height='30'> | {$tvg['name']} | {$tvg['tvg-name']} | {$tvg['group-title']} |\n";
     }
