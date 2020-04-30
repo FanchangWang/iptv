@@ -489,64 +489,66 @@ function mkdirBak()
 }
 
 /**
- * 检查 IP 是否变更
+ * 检查 URL 是否变更
  *
- * @return bool|string 值：string 新的 IP ;  false 未变更
+ * @return bool|string 值：string 新的 url ;  false 未变更
  */
-function checkIpChange()
+function checkUrlChange()
 {
     $html = @file_get_contents('http://tv.sason.xyz/new.m3u');
     if (!$html) {
         $html = @file_get_contents('http://ysp.dszbdq.cn/zhibo/cctv1.html');
     }
 
-    if (preg_match('/https?:\/\/(.*)\/.*.cctv.cn\/.*m3u8/', $html, $matches)) {
+    if (preg_match('/(https?:\/\/.*.cctv.cn\/.*\.m3u8)/', $html, $matches)) {
         if (!isset($matches[1]) || !$matches[1]) {
             return false;
         }
-        $ip = $matches[1];
+        
+        $url = preg_replace('/\/\d+\.m3u8/', '/', $matches[1]);
     }
 
-    $old_ip = '';
-    if ($json = json_decode(@file_get_contents('./ip.json'), true)) {
-        if (is_array($json) && isset($json['ip'])) {
-            $old_ip = $json['ip'];
+    $old_url = '';
+    if ($json = json_decode(@file_get_contents('./url.json'), true)) {
+        if (is_array($json) && isset($json['url'])) {
+            $old_url = $json['url'];
         }
     }
 
-    if ($old_ip != $ip) {
-        return $ip;
+    if ($old_url != $url) {
+        return $url;
     }
 
     return false;
 }
 
 /**
- * IP 变更后备份当前
+ * URL 变更后备份当前
  *
- * @param string $ip 新的 IP 地址
+ * @param string $url 新的 URL 地址
  */
-function backUpIp($ip)
+function backUpUrl($url)
 {
     $time = time();
     $data = [
-        'ip' => $ip,
+        'url' => $url,
         'time' => $time,
         'date' => date('Y-m-d H:i:s', $time)
     ];
-    file_put_contents('./ip.json', json_encode($data));
-    file_put_contents('./bak/ip_' . date('YmdHis') . '.json', json_encode($data));
+    file_put_contents('./url.json', json_encode($data));
+    file_put_contents('./bak/url_' . date('YmdHis') . '.json', json_encode($data));
 }
 
 /**
  * 创建新的 m3u 文件
  *
- * @param string $ip 新的 IP 地址
+ * @param string $url 新的 IP 地址
  * @return int 输出数量
  */
-function fetchM3u($ip)
+function fetchM3u($url)
 {
-    $m3u = "#EXTM3U x-tvg-url=\"http://epg.51zmt.top:8000/cc.xml.gz\" url-tvg=\"http://epg.51zmt.top:8000/cc.xml.gz\" tvg-url=\"http://epg.51zmt.top:8000/cc.xml.gz\n";
+//    $m3u = "#EXTM3U x-tvg-url=\"http://epg.51zmt.top:8000/cc.xml.gz\" url-tvg=\"http://epg.51zmt.top:8000/cc.xml.gz\" tvg-url=\"http://epg.51zmt.top:8000/cc.xml.gz\n";
+    $m3u = "#EXTM3U url-tvg=\"http://epg.51zmt.top:8000/cc.xml.gz\"\n";
 
     $channel = "| tvg-id | tvg-logo | name | tvg-name | group-title |\n";
     $channel .= "| :---- | :---- | :---- | :---- | :---- |\n";
@@ -557,8 +559,9 @@ function fetchM3u($ip)
 
         $m3u .= "#EXTINF:-1 tvg-id=\"{$tvg['tvg-id']}\" tvg-name=\"{$tvg['tvg-name']}\" tvg-logo=\"{$tvg['tvg-logo']}\" group-title=\"{$tvg['group-title']}\", {$tvg['name']}\n";
 
-//        $m3u .= isset($tvg['url']) && $tvg['url'] ? $tvg['url'] . "\n" : "http://{$ip}/tlivecloud-cdn.ysp.cctv.cn/001/{$tvg['vid']}.m3u8\n";
-        $m3u .= isset($tvg['url']) && $tvg['url'] ? $tvg['url'] . "\n" : "http://{$ip}/live-cnc-cdn.ysp.cctv.cn/ysp/{$tvg['vid']}.m3u8\n";
+//        $m3u .= isset($tvg['url']) && $tvg['url'] ? $tvg['url'] . "\n" : "http://{$url}/tlivecloud-cdn.ysp.cctv.cn/001/{$tvg['vid']}.m3u8\n";
+//        $m3u .= isset($tvg['url']) && $tvg['url'] ? $tvg['url'] . "\n" : "http://{$url}/live-cnc-cdn.ysp.cctv.cn/ysp/{$tvg['vid']}.m3u8\n";
+        $m3u .= isset($tvg['url']) && $tvg['url'] ? $tvg['url'] . "\n" : "{$url}{$tvg['vid']}.m3u8\n";
 
         $channel .= "| {$tvg['tvg-id']} | <img src='{$tvg['tvg-logo']}' alt='{$tvg['tvg-name']}' height='30'> | {$tvg['name']} | {$tvg['tvg-name']} | {$tvg['group-title']} |\n";
     }
@@ -576,7 +579,7 @@ function fetchM3u($ip)
 function pushGit()
 {
     exec("git add .");
-    exec("git commit -m 'ip change'");
+    exec("git commit -m 'url change'");
     exec("git push");
     exec("git push gitee master");
 }
@@ -600,15 +603,15 @@ function logger($msg, $type = 'info')
 
 mkdirBak();
 
-if (!$ip = checkIpChange()) {
-    logger('iptv ip is not change! ');
+if (!$url = checkUrlChange()) {
+    logger('iptv url is not change! ');
     die;
 }
 
-$num = fetchM3u($ip);
+$num = fetchM3u($url);
 
 if ($num) {
-    backUpIp($ip);
+    backUpUrl($url);
     pushGit();
 }
 
