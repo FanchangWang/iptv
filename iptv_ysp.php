@@ -30,6 +30,14 @@ function mkdirBak()
  */
 function checkM3u8Url($url)
 {
+    static $list = [];
+
+    if (in_array($url, $list)) {
+        return false;
+    }
+
+    $list[] = $url;
+
     $m3u = @file_get_contents($url);
     if ($m3u && strpos($m3u, 'EXTM3U') !== false) {
         return true;
