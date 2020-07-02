@@ -118,9 +118,25 @@ function checkUrlChange()
     }
 
     if (!$url) {
-        $html = getHtml('http://www.dszbdq.cn/play/ysp0522.php?id=' . substr($tv_vid, 3), true);
+        $qiha = 'http://www.dszbdq.cn/play/ysp0522.php?id=';
+        $html = getHtml($qiha . substr($tv_vid, 3), true);
         if ($html) {
             $url = getM3u8Url($html);
+        }
+
+        if (!$url) {
+            $html = getHtml("http://www.dszbdq.cn/play/ysp.html?id=0210103");
+            if ($html) {
+                if (preg_match('/(http.*dszbdq.*id=)/', $html, $matches)) {
+                    if (isset($matches[1]) && $matches[1] && $matches[1] != $qiha) {
+                        $qiha = $matches[1];
+                        $html = getHtml($qiha . substr($tv_vid, 3), true);
+                        if ($html) {
+                            $url = getM3u8Url($html);
+                        }
+                    }
+                }
+            }
         }
     }
 
