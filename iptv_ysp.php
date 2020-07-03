@@ -23,51 +23,6 @@ function mkdirBak()
 }
 
 /**
- * 检查 m3u8 链接是否有效
- *
- * @param string $url
- * @return bool
- */
-function checkM3u8Url($url)
-{
-    static $list = [];
-
-    if (in_array($url, $list)) {
-        return false;
-    }
-
-    $list[] = $url;
-
-    $m3u = @file_get_contents($url);
-    if ($m3u && strpos($m3u, 'EXTM3U') !== false) {
-        return true;
-    } else {
-        logger('the url has expired. m3u8 url: ' . $url);
-        return false;
-    }
-}
-
-/**
- * 获取 html 中的 m3u8 链接
- *
- * @param string $html
- * @return bool|string
- */
-function getM3u8Url($html)
-{
-    if (preg_match('/(https?:\/\/.*.cctv.cn\/.*\.m3u8)/', $html, $matches)) {
-        if (!isset($matches[1]) || !$matches[1]) {
-            return false;
-        }
-
-        if (checkM3u8Url($matches[1])) {
-            return preg_replace('/\/\d+\.m3u8/', '/', $matches[1]);
-        }
-    }
-    return false;
-}
-
-/**
  * 获取 html 正文
  *
  * @param string $link
@@ -85,6 +40,108 @@ function getHtml($link, $header = false)
     $html = curl_exec($ch);
     curl_close($ch);
     return $html;
+}
+
+/**
+ * 检查 m3u8 链接是否有效
+ *
+ * @param string $url
+ * @return bool
+ */
+function checkM3u8Url($url)
+{
+    static $list = [];
+
+    $arr = parse_url($url);
+    if (!$arr || !is_array($arr) || !isset($arr['host'])) {
+        logger('the url format error. m3u8 url: ' . $url, 'error');
+        return false;
+    }
+
+    if (in_array($arr['host'], $list)) {
+        return false;
+    }
+
+    $list[] = $arr['host'];
+
+    $m3u = getHtml($url);
+    if ($m3u && strpos($m3u, 'EXTM3U') !== false) {
+        return true;
+    } else {
+        logger('the url has expired. m3u8 url: ' . $url);
+        return false;
+    }
+}
+
+/**
+ * 获取 html 中的 m3u8 链接
+ *
+ * @param string $html
+ * @return bool|string
+ */
+function getM3u8Url($url, $header = false)
+{
+    $html = getHtml($url, $header);
+    if ($html && preg_match('/(https?:\/\/.*.cctv.cn\/.*\/\d{10}\.m3u8)/', $html, $matches)) {
+        if (isset($matches[1]) && $matches[1]) {
+            if (checkM3u8Url($matches[1])) {
+                return preg_replace('/\/\d+\.m3u8/', '/', $matches[1]);
+            }
+        }
+    }
+    return false;
+}
+
+/**
+ * 获取新的 ysp ip url
+ *
+ * @return bool|string
+ */
+function getNewUrl()
+{
+    // sason
+    if ($url = getM3u8Url('http://tv.sason.xyz/new.m3u')) {
+        return $url;
+    }
+
+    // 奇哈
+    $qiha = 'http://www.dszbdq.cn/play/ysp0522.php?id=0210103';
+    if ($url = getM3u8Url($qiha, true)) {
+        return $url;
+    } else {
+        $html = getHtml("http://www.dszbdq.cn/play/ysp.html?id=0210103");
+        if ($html && preg_match('/(http.*dszbdq.*id=)/', $html, $matches)) {
+            if (isset($matches[1]) && $matches[1]) {
+                $qiha2 = $matches[1] . '0210103';
+                if ($qiha2 != $qiha && $url = getM3u8Url($qiha2, true)) {
+                    return $url;
+                }
+            }
+        }
+    }
+
+    // https://gitee.com/zhxch3/list
+    if ($url = getM3u8Url('https://gitee.com/zhxch3/list/raw/master/nj.md')) {
+        return $url;
+    }
+
+    // https://gitee.com/dyanj311/iptv
+    if ($url = getM3u8Url('https://gitee.com/dyanj311/iptv/raw/master/%E4%B8%AD%E5%A4%AE%E7%94%B5%E8%A7%86%E5%8F%B0.m3u')) {
+        return $url;
+    }
+
+    // https://gitee.com/ajh102026/jmy
+    if ($url = getM3u8Url('https://gitee.com/ajh102026/jmy/raw/master/gq.txt')) {
+        return $url;
+    }
+
+    // https://gitee.com/kkfong820033/zzz
+    if ($url = getM3u8Url('https://gitee.com/kkfong820033/zzz/raw/master/tv.txt')) {
+        return $url;
+    }
+
+    logger('get new url fail', 'error');
+    return false;
 }
 
 /**
@@ -110,41 +167,7 @@ function checkUrlChange()
         }
     }
 
-
-    $url = '';
-    $html = getHtml('http://tv.sason.xyz/new.m3u');
-    if ($html) {
-        $url = getM3u8Url($html);
-    }
-
-    if (!$url) {
-        $qiha = 'http://www.dszbdq.cn/play/ysp0522.php?id=';
-        $html = getHtml($qiha . substr($tv_vid, 3), true);
-        if ($html) {
-            $url = getM3u8Url($html);
-        }
-
-        if (!$url) {
-            $html = getHtml("http://www.dszbdq.cn/play/ysp.html?id=0210103");
-            if ($html) {
-                if (preg_match('/(http.*dszbdq.*id=)/', $html, $matches)) {
-                    if (isset($matches[1]) && $matches[1] && $matches[1] != $qiha) {
-                        $qiha = $matches[1];
-                        $html = getHtml($qiha . substr($tv_vid, 3), true);
-                        if ($html) {
-                            $url = getM3u8Url($html);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    if (!$url) {
-        return false;
-    }
-
-    return $url;
+    return getNewUrl();
 }
 
 /**

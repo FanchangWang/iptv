@@ -12,10 +12,15 @@ iptv 国内视频源，点击查看 [频道列表](./CHANNEL_YSP.md)
 <http://epg.51zmt.top:8000/cc.xml.gz>
 
 ## 视频源 IP 来源项目
-- [奇哈电视直播网](http://ysp.dszbdq.cn)
+- [TV.Sason](http://tv.sason.xyz/)
+- [奇哈电视直播网](http://www.dszbdq.cn)
+- <https://gitee.com/zhxch3/list>
+- <https://gitee.com/dyanj311/iptv>
+- <https://gitee.com/ajh102026/jmy>
+- <https://gitee.com/kkfong820033/zzz>
 
-## 当前视频源 IP
-- [ip.json](./ip.json)
+## 当前视频源 IP URL
+- [url.json](./url.json)
 
 ## 生成新的 ysp.m3u 文件
 ```code
