@@ -83,10 +83,10 @@ function checkM3u8Url($url)
 function getM3u8Url($url, $header = false)
 {
     $html = getHtml($url, $header);
-    if ($html && preg_match('/(https?:\/\/.*.cctv.cn\/.*\/\d{10}\.m3u8)/', $html, $matches)) {
+    if ($html && preg_match('/(https?:\/\/[\d\.]+\/[\w\-\.]+\.cctv\.cn\/\w+\/\d{10}\.m3u8)/', $html, $matches)) {
         if (isset($matches[1]) && $matches[1]) {
             if (checkM3u8Url($matches[1])) {
-                return preg_replace('/\/\d+\.m3u8/', '/', $matches[1]);
+                return preg_replace('/\/\d{10}\.m3u8/', '/', $matches[1]);
             }
         }
     }
