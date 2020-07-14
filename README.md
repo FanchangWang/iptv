@@ -13,7 +13,9 @@ iptv 国内视频源，点击查看 [频道列表](./CHANNEL_YSP.md)
 
 ## 视频源 IP 来源项目
 - [TV.Sason](http://tv.sason.xyz/)
-- [奇哈电视直播网](http://www.dszbdq.cn)
+- ~~[奇哈电视直播网](http://www.dszbdq.cn)~~
+- <https://github.com/YueChan/IPTV>
+- <https://github.com/qwerttvv/Beijing-IPTV>
 - <https://gitee.com/zhxch3/list>
 - <https://gitee.com/dyanj311/iptv>
 - <https://gitee.com/ajh102026/jmy>

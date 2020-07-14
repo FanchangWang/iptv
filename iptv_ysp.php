@@ -33,6 +33,7 @@ function getHtml($link, $header = false)
 {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $link);
+    curl_setopt($ch, CURLOPT_REFERER, $link);
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -104,6 +105,8 @@ function getNewUrl()
         return $url;
     }
 
+    /*
+     * 启用了代理 m3u8, 为防止被恶意替换非法电视内容，暂停解析
     // 奇哈
     $qiha = 'http://www.dszbdq.cn/play/ysp0522.php?id=0210103';
     if ($url = getM3u8Url($qiha, true)) {
@@ -118,6 +121,19 @@ function getNewUrl()
                 }
             }
         }
+    }
+    */
+
+    // https://github.com/YueChan/IPTV
+    // https://raw.githubusercontent.com/YueChan/IPTV/master/IPTV.m3u // 域名被墙
+    if ($url = getM3u8Url('https://github.com/YueChan/IPTV/blob/master/IPTV.m3u')) {
+        return $url;
+    }
+
+    // https://github.com/qwerttvv/Beijing-IPTV
+    // https://raw.githubusercontent.com/qwerttvv/Beijing-IPTV/master/IPTV-Unicom.m3u // 域名被墙
+    if ($url = getM3u8Url('https://github.com/qwerttvv/Beijing-IPTV/blob/master/IPTV-Unicom.m3u')) {
+        return $url;
     }
 
     // https://gitee.com/zhxch3/list
