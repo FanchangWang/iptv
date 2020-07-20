@@ -167,8 +167,9 @@ function getNewUrl()
  */
 function checkUrlChange()
 {
-    $tvg_list = getTvgList();
-    $tv_vid = isset($tvg_list[0]['vid']) ? $tvg_list[0]['vid'] : 0;
+//    $tvg_list = getTvgList();
+//    $tv_vid = isset($tvg_list[0]['vid']) ? $tvg_list[0]['vid'] : 0;
+    $tv_vid = 2000296203; // 湖南卫视
     if (!$tv_vid) {
         logger('tv list error', 'error');
         die();
