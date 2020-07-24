@@ -17,9 +17,11 @@ return [
     ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226229/1.m3u8", "tvg-name" => "CCTV14"],
     ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226333/1.m3u8", "tvg-name" => "CCTV15"],
     ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226318/1.m3u8", "tvg-name" => "CCTV17"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225905/1.m3u8", "tvg-name" => "CETV"],
     ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225867/1.m3u8", "tvg-name" => "CGTN"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225866/1.m3u8", "tvg-name" => "CGTN记录"],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225866/1.m3u8", "tvg-name" => "CGTN记录",
+        "tvg-logo" => "http://epg.51zmt.top:8000/tb1/CCTV/cgtn.png", "group-title" => "央视", "name" => "CGTN记录"
+    ],
     ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226241/1.m3u8", "tvg-name" => "湖南卫视"],
     ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226247/1.m3u8", "tvg-name" => "浙江卫视"],
     ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226242/1.m3u8", "tvg-name" => "江苏卫视"],
@@ -60,28 +62,97 @@ return [
     ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225931/1.m3u8", "tvg-name" => "黑莓电竞"],
     ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225927/1.m3u8", "tvg-name" => "黑莓电影"],
     ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225905/1.m3u8", "tvg-name" => "中国教育1台"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225908/1.m3u8", "tvg-name" => "山东教育"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226233/1.m3u8", "tvg-name" => "超级电影"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226231/1.m3u8", "tvg-name" => "超级综艺"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226232/1.m3u8", "tvg-name" => "超级体育"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225864/1.m3u8", "tvg-name" => "超级剧集"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226298/1.m3u8", "tvg-name" => "中国功夫"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226296/1.m3u8", "tvg-name" => "金牌综艺"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226304/1.m3u8", "tvg-name" => "农业致富"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226286/1.m3u8", "tvg-name" => "潮妈辣婆"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226248/1.m3u8", "tvg-name" => "炫舞未来"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226295/1.m3u8", "tvg-name" => "明星大片"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226297/1.m3u8", "tvg-name" => "自由搏击"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226302/1.m3u8", "tvg-name" => "海外综合"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226294/1.m3u8", "tvg-name" => "惊梀悬疑"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226299/1.m3u8", "tvg-name" => "爱情喜剧"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226293/1.m3u8", "tvg-name" => "精品记录"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226328/1.m3u8", "tvg-name" => "精品体育"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226331/1.m3u8", "tvg-name" => "精品大剧"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226323/1.m3u8", "tvg-name" => "古装剧场"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226324/1.m3u8", "tvg-name" => "军旅剧场"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226326/1.m3u8", "tvg-name" => "军事评论"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225919/1.m3u8", "tvg-name" => "健康有约"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225918/1.m3u8", "tvg-name" => "家庭剧场"],
-    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226288/1.m3u8", "tvg-name" => "动作电影"]
+    ["url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225908/1.m3u8", "tvg-name" => "山东教育卫视"],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226233/1.m3u8", "tvg-name" => "NewTV超级电影",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvdianying.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226231/1.m3u8", "tvg-name" => "NewTV超级综艺",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvzongyi.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226232/1.m3u8", "tvg-name" => "NewTV超级体育",
+        "tvg-logo" => "", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225864/1.m3u8", "tvg-name" => "NewTV超级电视剧",
+        "tvg-logo" => "", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226298/1.m3u8", "tvg-name" => "NewTV中国功夫",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvgongfu.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226296/1.m3u8", "tvg-name" => "NewTV金牌综艺",
+        "tvg-logo" => "", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226304/1.m3u8", "tvg-name" => "NewTV农业致富",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvnongye.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226286/1.m3u8", "tvg-name" => "NewTV潮妈辣婆",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvlama.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226248/1.m3u8", "tvg-name" => "NewTV炫舞未来",
+        "tvg-logo" => "", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226295/1.m3u8", "tvg-name" => "NewTV明星大片",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvdapian.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226297/1.m3u8", "tvg-name" => "NewTV武博世界",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvboji.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226302/1.m3u8", "tvg-name" => "NewTV海外综合",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvhaiwai.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226294/1.m3u8", "tvg-name" => "NewTV惊梀悬疑",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvjingsong.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226299/1.m3u8", "tvg-name" => "NewTV爱情喜剧",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvxiju.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226293/1.m3u8", "tvg-name" => "NewTV精品记录",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvjilu.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226328/1.m3u8", "tvg-name" => "NewTV精品体育",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvjpty.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226331/1.m3u8", "tvg-name" => "NewTV精品大剧",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvdaju.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226323/1.m3u8", "tvg-name" => "NewTV古装剧场",
+        "tvg-logo" => "", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226324/1.m3u8", "tvg-name" => "NewTV军旅剧场",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvjunlv.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226326/1.m3u8", "tvg-name" => "NewTV军事评论",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvjspl.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225919/1.m3u8", "tvg-name" => "NewTV怡伴健康",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvjiankang.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221225918/1.m3u8", "tvg-name" => "NewTV家庭剧场",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvjiating.jpg", "group-title" => "NewTV"
+    ],
+    [
+        "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226288/1.m3u8", "tvg-name" => "NewTV动作电影",
+        "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvdongzuo.jpg", "group-title" => "NewTV"
+    ]
 ];

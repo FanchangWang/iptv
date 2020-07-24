@@ -220,7 +220,16 @@ function fetchM3u($url)
 
     $tvg_list = getTvgList();
 
+    $epgList = require('epg.php');
+
+    $epgTvgNameList = array_column($epgList, 'tvg-name');
+
+
     foreach ($tvg_list as $tvg) {
+
+        $idx = array_search($tvg['tvg-name'], $epgTvgNameList);
+
+        $tvg = array_merge($tvg, $epgList[$idx]);
 
         $m3u .= "#EXTINF:-1 tvg-id=\"{$tvg['tvg-id']}\" tvg-name=\"{$tvg['tvg-name']}\" tvg-logo=\"{$tvg['tvg-logo']}\" group-title=\"{$tvg['group-title']}\", {$tvg['name']}\n";
 
