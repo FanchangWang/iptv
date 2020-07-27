@@ -37,7 +37,7 @@ class ChinaMobile extends AbstractTv
         $content = '';
         foreach ($tvList as $tv) {
             $idx = array_search($tv['tvg-name'], $epgTvgNameList);
-            $tvg = array_merge($tv, $epgList[$idx]);
+            $tvg = $idx ? array_merge($tv, $epgList[$idx]) : $tv;
 
             if (!isset($tvg['group-title']) || !in_array($tvg['group-title'], ['央视', '卫视', 'NewTV'])) {
                 $tvg['group-title'] = '卫视';
