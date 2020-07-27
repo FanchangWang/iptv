@@ -1,0 +1,47 @@
+{
+    "name": "wangfanchang/iptv",
+    "type": "project",
+    "description": "china iptv",
+    "keywords": [
+        "iptv",
+        "直播源"
+    ],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "wangfanchang",
+            "email": "2651919937@qq.com",
+            "homepage": "https://github.com/FanchangWang",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.2.5",
+        "monolog/monolog": "^2.1.0",
+        "guzzlehttp/guzzle": "^7.0.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        },
+        "files": [
+            "src/Function.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer"
+        }
+    }
+}
