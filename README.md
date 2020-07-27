@@ -2,9 +2,9 @@
 iptv 国内视频源
 
 ## 视频源地址·推荐 (已内置 EPG)(国内 gitee)
-- 央视频 & 中国移动 <https://guyuexuan.gitee.io/iptv.m3u>
-- 央视频 <https://guyuexuan.gitee.io/ysp.m3u>
-- 中国移动 <https://guyuexuan.gitee.io/china_mobile.m3u>
+- 央视频 & 中国移动 <https://guyuexuan.gitee.io/iptv/iptv.m3u>
+- 央视频 <https://guyuexuan.gitee.io/iptv/ysp.m3u>
+- 中国移动 <https://guyuexuan.gitee.io/iptv/china_mobile.m3u>
 
 ## EPG 地址
     > M3U 视频源已内置 EPG，此地址仅提供给不支持内置 EPG 源的 IPTV 客户端使用
