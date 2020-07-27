@@ -1,19 +1,17 @@
 # iptv
-iptv 国内视频源，点击查看 [频道列表](./CHANNEL_YSP.md)
+iptv 国内视频源
 
 ## 视频源地址·推荐 (已内置 EPG)(国内 gitee)
-<https://gitee.com/guyuexuan/iptv/raw/master/ysp.m3u>
-
-## 视频源地址 (已内置 EPG)(国外 github)
-<https://raw.githubusercontent.com/FanchangWang/iptv/master/ysp.m3u>
+- 央视频 & 中国移动 <https://guyuexuan.gitee.io/iptv.m3u>
+- 央视频 <https://guyuexuan.gitee.io/ysp.m3u>
+- 中国移动 <https://guyuexuan.gitee.io/china_mobile.m3u>
 
 ## EPG 地址
     > M3U 视频源已内置 EPG，此地址仅提供给不支持内置 EPG 源的 IPTV 客户端使用
-<http://epg.51zmt.top:8000/cc.xml.gz>
+<http://epg.51zmt.top:8000/e.xml.gz>
 
-## 视频源 IP 来源项目
+## 央视频 URI 来源项目
 - [TV.Sason](http://tv.sason.xyz/)
-- ~~[奇哈电视直播网](http://www.dszbdq.cn)~~
 - <https://github.com/YueChan/IPTV>
 - <https://github.com/qwerttvv/Beijing-IPTV>
 - <https://gitee.com/zhxch3/list>
@@ -21,10 +19,8 @@ iptv 国内视频源，点击查看 [频道列表](./CHANNEL_YSP.md)
 - <https://gitee.com/ajh102026/jmy>
 - <https://gitee.com/kkfong820033/zzz>
 
-## 当前视频源 IP URL
-- [url.json](./url.json)
-
-## 生成新的 ysp.m3u 文件
+## 生成新的 m3u 文件
 ```code
-php ./iptv_ysp.php
+composer install
+php ./bin/iptv.php
 ```
