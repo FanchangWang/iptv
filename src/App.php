@@ -28,9 +28,11 @@ class App
         /** @var string $prefixContent 正文详情 */
         extract(self::factory(Ysp::class, YspConstant::M3U_PATH, 'ysp', $m3uHead));
 
-        if ($change && $state && $prefixContent) {
+        if ($state && $prefixContent) {
             $allContent .= $prefixContent;
-            $changeList[] = 'ysp';
+            if ($change) {
+                $changeList[] = 'ysp';
+            }
         }
 
         /** @var bool $state 检查状态 */
@@ -38,12 +40,14 @@ class App
         /** @var string $prefixContent 正文详情 */
         extract(self::factory(ChinaMobile::class, ChinaMobileConstant::M3U_PATH, '移动', $m3uHead));
 
-        if ($change && $state && $prefixContent) {
+        if ($state && $prefixContent) {
             $allContent .= $prefixContent;
-            $changeList[] = 'china_mobile';
+            if ($change) {
+                $changeList[] = 'china_mobile';
+            }
         }
 
-        if ($allContent) {
+        if (!empty($changeList)) {
             file_put_contents(BASE_PATH . TvConstant::M3U_PATH, $m3uHead . $allContent);
 
             /**
@@ -60,7 +64,6 @@ class App
             }
 
             static::_pushGit(implode(' & ', $changeList));
-
         }
     }
 
@@ -105,6 +108,12 @@ class App
             }
             $content = $m3uHead . $content;
             file_put_contents(BASE_PATH . $m3uPath, $content);
+        } else { // 未发生改变
+            if ($state) { // 成功 // 历史可用
+                $prefixContent = $class->getTvM3uContent($url, $groupPrefix);
+                $data['state'] = true;
+                $data['prefixContent'] = $prefixContent;
+            }
         }
 
         return $data;
