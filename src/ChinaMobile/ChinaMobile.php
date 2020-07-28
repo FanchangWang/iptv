@@ -37,7 +37,7 @@ class ChinaMobile extends AbstractTv
         $content = '';
         foreach ($tvList as $tv) {
             $idx = array_search($tv['tvg-name'], $epgTvgNameList);
-            $tvg = $idx ? array_merge($tv, $epgList[$idx]) : $tv;
+            $tvg = ($idx !== false) ? array_merge($tv, $epgList[$idx]) : $tv;
 
             if (!isset($tvg['group-title']) || !in_array($tvg['group-title'], ['央视', '卫视', 'NewTV'])) {
                 $tvg['group-title'] = '卫视';
@@ -49,7 +49,7 @@ class ChinaMobile extends AbstractTv
 
             $content .= $this->getM3uLine(
                 $tvg['name'] ?? $tvg['tvg-name'],
-                $url,
+                $tvg['url'],
                 $tvg['group-title'] ?? '',
                 $tvg['tvg-name'] ?? '',
                 $tvg['tvg-id'] ?? '',
