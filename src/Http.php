@@ -44,10 +44,10 @@ class Http
     private $method = 'GET';
 
     /** @var float CURL 请求超时时间 */
-    private $timeout = 8.0;
+    private $timeout = 0;
 
     /** @var float CURL 等待服务器响应时间 */
-    private $connectTimeout = 8.0;
+    private $connectTimeout = 0;
 
     /**
      * set url
@@ -206,7 +206,7 @@ class Http
      * @param float $timeout
      * @return $this
      */
-    public function setTimeout(float $timeout = 8.0): self
+    public function setTimeout(float $timeout): self
     {
         $this->timeout = $timeout;
         return $this;
@@ -218,7 +218,7 @@ class Http
      * @param float $connectTimeout
      * @return $this
      */
-    public function setConnectTimeout(float $connectTimeout = 8.0): self
+    public function setConnectTimeout(float $connectTimeout): self
     {
         $this->connectTimeout = $connectTimeout;
         return $this;
