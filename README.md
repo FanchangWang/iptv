@@ -2,7 +2,7 @@
 iptv 国内视频源
 
 ## 视频源地址·推荐 (已内置 EPG)(国内 gitee)
-- 央视频 & 中国移动 <https://gitee.com/guyuexuan/iptv/raw/master/dist/iptv.m3u>
+- 央视频 & cmvideo & 中国移动 <https://gitee.com/guyuexuan/iptv/raw/master/dist/iptv.m3u>
 - 央视频 <https://gitee.com/guyuexuan/iptv/raw/master/dist/ysp.m3u>
 - cmvideo <https://gitee.com/guyuexuan/iptv/raw/master/dist/cmvideo.m3u>
 - 中国移动 <https://gitee.com/guyuexuan/iptv/raw/master/dist/china_mobile.m3u>
