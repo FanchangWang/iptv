@@ -1,7 +1,7 @@
 <?php
 /**
  * EPG 节目单列表
- * 来自 epg.51zmt.top:8000
+ * @see http://epg.51zmt.top:8000
  * 同步时间 2020-07-23
  */
 return [

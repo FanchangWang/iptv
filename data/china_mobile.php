@@ -321,7 +321,7 @@ return [
     ],
     [
         "url" => "http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221226294/1.m3u8",
-        "tvg-name" => "NewTV惊梀悬疑",
+        "tvg-name" => "NewTV惊悚悬疑",
         "tvg-logo" => "http://www.tvyan.com/uploads/dianshi/newtvjingsong.jpg",
         "group-title" => "NewTV"
     ],

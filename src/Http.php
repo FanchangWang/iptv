@@ -6,6 +6,7 @@ namespace Src;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJarInterface;
+use GuzzleHttp\Exception\ConnectException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 
@@ -277,11 +278,21 @@ class Http
         try {
             $client = new Client();
 
-            return $client->request(
-                $this->method,
-                $this->uri,
-                $this->getOption()
-            );
+            try {
+                return $client->request(
+                    $this->method,
+                    $this->uri,
+                    $this->getOption()
+                );
+            } catch (ConnectException $e) {
+                /** 连接超时，增加重试 */
+                logger('http')->notice(json_encode(get_throwable_error_log($e)));
+                return $client->request(
+                    $this->method,
+                    $this->uri,
+                    $this->getOption()
+                );
+            }
 //        } catch (TransferException $e) {
         } catch (\Throwable $t) {
             logger('http')->error(json_encode(get_throwable_error_log($t)));

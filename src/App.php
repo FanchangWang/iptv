@@ -5,7 +5,9 @@ namespace Src;
 
 
 use Src\ChinaMobile\ChinaMobile;
+use Src\Cmvideo\Cmvideo;
 use Src\Constant\ChinaMobileConstant;
+use Src\Constant\CmvideoConstant;
 use Src\Constant\TvConstant;
 use Src\Constant\YspConstant;
 use Src\Ysp\Ysp;
@@ -38,6 +40,18 @@ class App
         /** @var bool $state 检查状态 */
         /** @var bool $change 是否改变 */
         /** @var string $prefixContent 正文详情 */
+        extract(self::factory(Cmvideo::class, CmvideoConstant::M3U_PATH, 'cmvideo', $m3uHead));
+
+        if ($state && $prefixContent) {
+            $allContent .= $prefixContent;
+            if ($change) {
+                $changeList[] = 'cmvideo';
+            }
+        }
+
+        /** @var bool $state 检查状态 */
+        /** @var bool $change 是否改变 */
+        /** @var string $prefixContent 正文详情 */
         extract(self::factory(ChinaMobile::class, ChinaMobileConstant::M3U_PATH, '移动', $m3uHead));
 
         if ($state && $prefixContent) {
@@ -55,6 +69,9 @@ class App
              */
             if (is_file(BASE_PATH . YspConstant::M3U_PATH)) {
                 copy(BASE_PATH . YspConstant::M3U_PATH, BASE_PATH . '/ysp.m3u');
+            }
+            if (is_file(BASE_PATH . CmvideoConstant::M3U_PATH)) {
+                copy(BASE_PATH . CmvideoConstant::M3U_PATH, BASE_PATH . '/cmvideo.m3u');
             }
             if (is_file(BASE_PATH . ChinaMobileConstant::M3U_PATH)) {
                 copy(BASE_PATH . ChinaMobileConstant::M3U_PATH, BASE_PATH . '/china_mobile.m3u');
