@@ -30,7 +30,7 @@ class Logger
             return static::$monoLogger[$name];
         }
 
-        $handler = new RotatingFileHandler(BASE_PATH . LogConstant::LOG_PATH);
+        $handler = new RotatingFileHandler(BASE_PATH . LogConstant::LOG_PATH, 30);
 
         $dateFormat = "Y-m-d H:i:s";
         $output = "[%datetime%] %extra% %channel%.%level_name%: %message% %context%\n";
