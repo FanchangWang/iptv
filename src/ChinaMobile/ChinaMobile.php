@@ -25,6 +25,16 @@ class ChinaMobile extends AbstractTv
     }
 
     /**
+     * 由于循环检测时易出现 curl connect timeout，且 url 变更可能性不大，暂时忽略检测
+     *
+     * @inheritDoc
+     */
+    protected function checkM3u8Url(string $url): bool
+    {
+        return true;
+    }
+
+    /**
      * @inheritDoc
      */
     function getTvM3uContent(string $url, string $groupPrefix = ''): string

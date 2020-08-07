@@ -25,62 +25,44 @@ class App
         /** @var array $changeList 发生改变的 group */
         $changeList = [];
 
-        /** @var bool $state 检查状态 */
-        /** @var bool $change 是否改变 */
-        /** @var string $prefixContent 正文详情 */
-        extract(self::factory(Ysp::class, YspConstant::M3U_PATH, 'ysp', $m3uHead));
+        /** @var array $factoryList 要处理的工厂 tv group */
+        $factoryList = [
+            [
+                'className' => Ysp::class, 'm3uPath' => YspConstant::M3U_PATH,
+                'groupPrefix' => 'ysp', 'groupName' => 'ysp'
+            ],
+            [
+                'className' => Cmvideo::class, 'm3uPath' => CmvideoConstant::M3U_PATH,
+                'groupPrefix' => 'cmvideo', 'groupName' => 'cmvideo'
+            ],
+            [
+                'className' => ChinaMobile::class, 'm3uPath' => ChinaMobileConstant::M3U_PATH,
+                'groupPrefix' => '移动', 'groupName' => 'china_mobile'
+            ]
+        ];
 
-        if ($state && $prefixContent) {
-            $allContent .= $prefixContent;
-            if ($change) {
-                $changeList[] = 'ysp';
+        foreach ($factoryList as $factory) {
+            /** @var bool $state 检查状态 */
+            /** @var bool $change 是否改变 */
+            /** @var string $prefixContent 正文详情 */
+            extract(self::factory($factory['className'], $factory['m3uPath'], $factory['groupPrefix'], $m3uHead));
+
+            if ($state && $prefixContent) {
+                $allContent .= $prefixContent;
             }
-        }
-
-        /** @var bool $state 检查状态 */
-        /** @var bool $change 是否改变 */
-        /** @var string $prefixContent 正文详情 */
-        extract(self::factory(Cmvideo::class, CmvideoConstant::M3U_PATH, 'cmvideo', $m3uHead));
-
-        if ($state && $prefixContent) {
-            $allContent .= $prefixContent;
             if ($change) {
-                $changeList[] = 'cmvideo';
-            }
-        }
-
-        /** @var bool $state 检查状态 */
-        /** @var bool $change 是否改变 */
-        /** @var string $prefixContent 正文详情 */
-        extract(self::factory(ChinaMobile::class, ChinaMobileConstant::M3U_PATH, '移动', $m3uHead));
-
-        if ($state && $prefixContent) {
-            $allContent .= $prefixContent;
-            if ($change) {
-                $changeList[] = 'china_mobile';
+                $changeList[] = $factory['groupName'];
             }
         }
 
         if (!empty($changeList)) {
             file_put_contents(BASE_PATH . TvConstant::M3U_PATH, $m3uHead . $allContent);
 
-            /**
-             * 兼容旧的 path 路径，后续会废弃
-             */
-            if (is_file(BASE_PATH . YspConstant::M3U_PATH)) {
-                copy(BASE_PATH . YspConstant::M3U_PATH, BASE_PATH . '/ysp.m3u');
-            }
-            if (is_file(BASE_PATH . CmvideoConstant::M3U_PATH)) {
-                copy(BASE_PATH . CmvideoConstant::M3U_PATH, BASE_PATH . '/cmvideo.m3u');
-            }
-            if (is_file(BASE_PATH . ChinaMobileConstant::M3U_PATH)) {
-                copy(BASE_PATH . ChinaMobileConstant::M3U_PATH, BASE_PATH . '/china_mobile.m3u');
-            }
-            if (is_file(BASE_PATH . TvConstant::M3U_PATH)) {
-                copy(BASE_PATH . TvConstant::M3U_PATH, BASE_PATH . '/iptv.m3u');
-            }
-
             static::_pushGit(implode(' & ', $changeList));
+
+            /**
+             * @deprecated 2020-08-07 废除旧 path 路径 兼容
+             */
         }
     }
 

@@ -1,3 +1,0 @@
-#EXTM3U url-tvg="http://epg.51zmt.top:8000/e.xml.gz"
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="失效", 源失效等待更新
-http://127.0.0.1/1.ts
