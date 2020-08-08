@@ -6,6 +6,7 @@ namespace Src;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJarInterface;
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ConnectException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
@@ -284,8 +285,8 @@ class Http
                     $this->uri,
                     $this->getOption()
                 );
-            } catch (ConnectException $e) {
-                /** 连接超时，增加重试 */
+            } catch (ConnectException|ClientException $e) {
+                /** 连接超时 & 404 Not Found，增加重试 */
                 logger('http')->notice(json_encode(get_throwable_error_log($e)));
                 return $client->request(
                     $this->method,
