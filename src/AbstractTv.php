@@ -111,12 +111,17 @@ abstract class AbstractTv
             'url' => '' // m3u8 url 原url 或 新url
         ];
 
-        $historyM3u8Url = $this->_getHistoryM3u8Url();
+        $historyArr = $this->_getHistory();
+
+        $historyM3u8Url = $historyArr['url'] ?? '';
 
         if ($historyM3u8Url && $this->checkM3u8Url($historyM3u8Url)) { // 成功，历史未改变
             $data['state'] = true;
             $data['change'] = false;
             $data['url'] = $historyM3u8Url;
+            if ($historyArr['err_num'] > 0) { // 如果存在历史失败次数，进行清除
+                $this->_saveHistory($historyM3u8Url, 0);
+            }
             return $data;
         }
 
@@ -124,26 +129,33 @@ abstract class AbstractTv
             $data['state'] = true;
             $data['change'] = true;
             $data['url'] = $url;
-            $this->_saveHistory($url);
+            $this->_saveHistory($url, 0);
             return $data;
         }
 
         if ($historyM3u8Url) { // 失败，历史已改变
-            $data['state'] = false;
-            $data['change'] = true;
             $data['url'] = $historyM3u8Url;
-            $this->_saveHistory('');
+            $err_num = $historyArr['err_num'] + 1;
+            $url = $historyM3u8Url;
+            if ($err_num > 3) { // 失败次数超过 3 次
+                $url = '';
+                $data['state'] = false;
+                $data['change'] = true;
+            } else { // 失败次数未达到累计数值，暂不进行切换处理
+                $data['state'] = true;
+            }
+            $this->_saveHistory($url, $err_num);
         }
 
         return $data;
     }
 
     /**
-     * 获取历史保存 m3u8 url
+     * 获取历史保存 json array
      *
-     * @return string
+     * @return array
      */
-    private function _getHistoryM3u8Url(): string
+    private function _getHistory(): array
     {
         $path = BASE_PATH . $this->historyJsonPath;
         if (is_file($path)) {
@@ -151,11 +163,14 @@ abstract class AbstractTv
             if ($content) {
                 $jsonArr = json_decode($content, true);
                 if (is_array($jsonArr) && isset($jsonArr['url'])) {
-                    return $jsonArr['url'];
+                    if (!isset($jsonArr['err_num'])) {
+                        $jsonArr['err_num'] = 0;
+                    }
+                    return $jsonArr;
                 }
             }
         }
-        return '';
+        return [];
     }
 
     /**
@@ -163,30 +178,17 @@ abstract class AbstractTv
      *
      * @param string $url
      */
-    private function _saveHistory(string $url)
+    private function _saveHistory(string $url, int $err_num = 0)
     {
         $time = time();
         $data = [
             'url' => $url,
             'time' => $time,
-            'date' => date('Y-m-d H:i:s', $time)
+            'date' => date('Y-m-d H:i:s', $time),
+            'err_num' => $err_num // 失败计数器
         ];
         file_put_contents(BASE_PATH . $this->historyJsonPath,
             json_encode($data, JSON_UNESCAPED_UNICODE));
-    }
-
-    /**
-     * 检查历史保存 m3u8 url 是否可用
-     *
-     * @return bool|string
-     */
-    private function _checkHistoryM3u8Url()
-    {
-        $m3u8 = $this->_getHistoryM3u8Url();
-        if ($m3u8 && $this->checkM3u8Url($m3u8)) {
-            return $m3u8;
-        }
-        return false;
     }
 
     /**
