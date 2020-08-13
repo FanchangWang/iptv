@@ -18,6 +18,12 @@ abstract class AbstractTv
     /** @var string 历史 json 路径 */
     protected $historyJsonPath;
 
+    /** @var string 错误计数器路径 */
+    protected $errCounterPath;
+
+    /** @var int 最大错误次数 */
+    protected $maxErrCount = 3;
+
     /** @var array 已检测过的 URL */
     private $checkedUrl = [];
 
@@ -111,16 +117,15 @@ abstract class AbstractTv
             'url' => '' // m3u8 url 原url 或 新url
         ];
 
-        $historyArr = $this->_getHistory();
-
-        $historyM3u8Url = $historyArr['url'] ?? '';
+        $historyM3u8Url = $this->_getHistoryM3u8Url();
+        $errCount = $this->_getErrCount();
 
         if ($historyM3u8Url && $this->checkM3u8Url($historyM3u8Url)) { // 成功，历史未改变
             $data['state'] = true;
             $data['change'] = false;
             $data['url'] = $historyM3u8Url;
-            if ($historyArr['err_num'] > 0) { // 如果存在历史失败次数，进行清除
-                $this->_saveHistory($historyM3u8Url, 0);
+            if ($errCount > 0) { // 如果存在历史失败计数，进行清除
+                $this->_saveErrCount(0);
             }
             return $data;
         }
@@ -129,33 +134,35 @@ abstract class AbstractTv
             $data['state'] = true;
             $data['change'] = true;
             $data['url'] = $url;
-            $this->_saveHistory($url, 0);
+            $this->_saveHistory($url);
+            if ($errCount > 0) { // 如果存在历史失败计数，进行清除
+                $this->_saveErrCount(0);
+            }
             return $data;
         }
 
         if ($historyM3u8Url) { // 失败，历史已改变
-            $data['url'] = $historyM3u8Url;
-            $err_num = $historyArr['err_num'] + 1;
-            $url = $historyM3u8Url;
-            if ($err_num > 3) { // 失败次数超过 3 次
-                $url = '';
+            $errCount++;
+            if ($errCount > $this->maxErrCount) { // 失败计数超过上限
                 $data['state'] = false;
                 $data['change'] = true;
+                $this->_saveHistory('');
             } else { // 失败次数未达到累计数值，暂不进行切换处理
                 $data['state'] = true;
             }
-            $this->_saveHistory($url, $err_num);
+            $data['url'] = $historyM3u8Url;
+            $this->_saveErrCount($errCount);
         }
 
         return $data;
     }
 
     /**
-     * 获取历史保存 json array
+     * 获取历史保存 m3u8 url
      *
-     * @return array
+     * @return string
      */
-    private function _getHistory(): array
+    private function _getHistoryM3u8Url(): string
     {
         $path = BASE_PATH . $this->historyJsonPath;
         if (is_file($path)) {
@@ -163,14 +170,31 @@ abstract class AbstractTv
             if ($content) {
                 $jsonArr = json_decode($content, true);
                 if (is_array($jsonArr) && isset($jsonArr['url'])) {
-                    if (!isset($jsonArr['err_num'])) {
-                        $jsonArr['err_num'] = 0;
-                    }
-                    return $jsonArr;
+                    return $jsonArr['url'];
                 }
             }
         }
-        return [];
+        return '';
+    }
+
+    /**
+     * 获取历史保存 错误计数
+     *
+     * @return int
+     */
+    private function _getErrCount(): int
+    {
+        $path = BASE_PATH . $this->errCounterPath;
+        if (is_file($path)) {
+            $content = @file_get_contents($path);
+            if ($content) {
+                $jsonArr = json_decode($content, true);
+                if (is_array($jsonArr) && isset($jsonArr['err_count'])) {
+                    return $jsonArr['err_count'];
+                }
+            }
+        }
+        return 0;
     }
 
     /**
@@ -178,16 +202,31 @@ abstract class AbstractTv
      *
      * @param string $url
      */
-    private function _saveHistory(string $url, int $err_num = 0)
+    private function _saveHistory(string $url)
     {
         $time = time();
         $data = [
             'url' => $url,
             'time' => $time,
-            'date' => date('Y-m-d H:i:s', $time),
-            'err_num' => $err_num // 失败计数器
+            'date' => date('Y-m-d H:i:s', $time)
         ];
         file_put_contents(BASE_PATH . $this->historyJsonPath,
+            json_encode($data, JSON_UNESCAPED_UNICODE));
+    }
+
+    /**
+     * 保存错误计数
+     *
+     * @param int $err_count
+     */
+    private function _saveErrCount(int $err_count)
+    {
+        $time = time();
+        $data = [
+            'err_count' => $err_count,
+            'time' => $time
+        ];
+        file_put_contents(BASE_PATH . $this->errCounterPath,
             json_encode($data, JSON_UNESCAPED_UNICODE));
     }
 

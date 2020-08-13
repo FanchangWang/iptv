@@ -19,6 +19,9 @@ class Ysp extends AbstractTv
     /** @var string 历史 json 路径 */
     protected $historyJsonPath = YspConstant::JSON_PATH;
 
+    /** @var string 错误计数器路径 */
+    protected $errCounterPath = YspConstant::ERR_COUNTER_PATH;
+
     /**
      * @inheritDoc
      */

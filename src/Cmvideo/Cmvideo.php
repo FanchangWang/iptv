@@ -13,6 +13,9 @@ class Cmvideo extends AbstractTv
     /** @var string 历史 json 路径 */
     protected $historyJsonPath = CmvideoConstant::JSON_PATH;
 
+    /** @var string 错误计数器路径 */
+    protected $errCounterPath = CmvideoConstant::ERR_COUNTER_PATH;
+
     /**
      * @inheritDoc
      */

@@ -1,3 +1,4 @@
 /vendor/
 /runtime/logs/
+/runtime/counter/
 .phpunit.result.cache
