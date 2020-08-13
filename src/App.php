@@ -31,10 +31,10 @@ class App
                 'className' => Ysp::class, 'm3uPath' => YspConstant::M3U_PATH,
                 'groupPrefix' => 'ysp', 'groupName' => 'ysp'
             ],
-            [
-                'className' => Cmvideo::class, 'm3uPath' => CmvideoConstant::M3U_PATH,
-                'groupPrefix' => 'cmvideo', 'groupName' => 'cmvideo'
-            ],
+//            [
+//                'className' => Cmvideo::class, 'm3uPath' => CmvideoConstant::M3U_PATH,
+//                'groupPrefix' => 'cmvideo', 'groupName' => 'cmvideo'
+//            ],
             [
                 'className' => ChinaMobile::class, 'm3uPath' => ChinaMobileConstant::M3U_PATH,
                 'groupPrefix' => '移动', 'groupName' => 'china_mobile'
