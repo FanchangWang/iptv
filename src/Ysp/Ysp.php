@@ -46,8 +46,8 @@ class Ysp extends AbstractTv
     {
         // 用于检测的央视频 vid
         $ids = [
-            2000210103,
-            2000296203,
+            2000210103, // CCTV 1
+//            2000296203, // 湖南卫视
         ];
         foreach ($ids as $id) {
             $url = $uri . $id . '.m3u8';
